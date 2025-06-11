@@ -30,9 +30,16 @@ public class C01_Locator {
         aramaKutusuElementi.submit();
         Thread.sleep(2000);
 
+        //test edin
+        WebElement urunSonucElementi = driver.findElement(By.className("product-count-text"));
+        String unExpectedUrunSonuc = "0 Products Found";
+        String actualUrunSonyc = urunSonucElementi.getText();
+
+        if(actualUrunSonyc.equals(unExpectedUrunSonuc)){
+            System.out.println("Başarısız");
+        }else System.out.println("Başarılı");
+
         driver.quit();
-
-
 
 
     }
